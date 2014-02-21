@@ -4,7 +4,7 @@ Donate link: http://pledgie.com/campaigns/17811
 Tags: attribution, citation, cite, post, link
 Requires at least: 3.0
 Tested up to: 3.3.2
-Stable tag: 1.0
+Stable tag: 1.1.0
 
 A simple plugin to allow bloggers to add attribution to sourced posts.
 
@@ -14,7 +14,7 @@ Simple Attribution is just that... simple! It adds a meta box on post pages whic
 
 Simple Attribution allows links to be generated in both text and image form, allowing you to customize it to the feel of your website. Natively, it includes 10 icons which can be used to identify the attribution link instead of the standard caption (which is editable through the options panel), and custom icons can be used as well.
 
-Don't like where we put the link? You have the option to disable auto-attribution and put the link wherever you want it to display simply by adding &lt;?php simple_attribution(); ?&gt; to your template!
+Don't like where we put the link? You have the option to disable auto-attribution and put the link wherever you want it to display simply by adding &lt;?php $simple_attribution = new Simple_Attribution; $simple_attribution->display_attribution(); ?&gt; to your template!
 
 == Installation ==
 
@@ -32,6 +32,10 @@ None yet
 2. The options panel
 
 == Changelog ==
+
+= Version 1.1.0 =
+* Moved to class-based structure
+* Added proper I18N
 
 = Version 1.0 =
 * Initial release
