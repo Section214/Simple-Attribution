@@ -3,7 +3,7 @@
  * Plugin Name:     Simple Attribution
  * Plugin URI:      http://wordpress.org/plugins/simple-attribution/
  * Description:     Allows bloggers to easily add an attribution link to sourced blog posts.
- * Version:         1.1.0
+ * Version:         1.1.1
  * Author:          Daniel J Griffiths
  * Author URI:      http://section214.com
  * Text Domain:     simple-attribution
@@ -175,10 +175,10 @@ if( !class_exists( 'Simple_Attribution' ) ) {
          */
         public function add_menu() {
 	        add_options_page(
-                __( 'Simple Attribution', 'simple-attribution' ), 
-                __( 'Simple Attribution', 'simple-attribution' ), 
-                'manage_options', 
-                'simple-attribution', 
+                __( 'Simple Attribution', 'simple-attribution' ),
+                __( 'Simple Attribution', 'simple-attribution' ),
+                'manage_options',
+                'simple-attribution',
                 array( $this, 'display_options' )
             );
         }
@@ -235,7 +235,7 @@ if( !class_exists( 'Simple_Attribution' ) ) {
                 }
             }
 
-            echo '<form action="/wp-admin/options-general.php?page=simple-attribution" method="post">';
+            echo '<form action="' . get_admin_url() . 'options-general.php?page=simple-attribution" method="post">';
             echo '<input type="hidden" name="sa-update" value="true" />';
 
             echo '<table cellpadding="5" class="widefat post fixed" style="width: 600px">';
@@ -359,11 +359,11 @@ if( !class_exists( 'Simple_Attribution' ) ) {
          */
         public function add_meta_box() {
 	        add_meta_box(
-                'simple_attribution_meta', 
+                'simple_attribution_meta',
                 __( 'Simple Attribution', 'simple-attribution' ),
-                array( $this, 'meta_box_callback' ), 
-                'post', 
-                'side', 
+                array( $this, 'meta_box_callback' ),
+                'post',
+                'side',
                 'low'
             );
         }
@@ -391,7 +391,7 @@ if( !class_exists( 'Simple_Attribution' ) ) {
                 <label for="simple_attribution_title">' . __( 'Attribution Title:', 'simple-attribution' ) . '</label>
                 <input type="text" id="simple_attribution_title" name="simple_attribution_title" value="' . $title . '" class="widefat" />
                 </p>';
-            
+
             echo '<p>
                 <label for="simple_attribution_url">' . __( 'Attribution URL:', 'simple-attribution' ) . '</label>
                 <input type="text" id="simple_attribution_url" name="simple_attribution_url" value="' . $url . '" class="widefat" />
@@ -417,7 +417,7 @@ if( !class_exists( 'Simple_Attribution' ) ) {
         	if( !current_user_can( 'edit_post' ) ) return $post_id;
 
         	// Save the data
-        	if( isset( $_POST['simple_attribution_title'] ) ) {  
+        	if( isset( $_POST['simple_attribution_title'] ) ) {
         		update_post_meta( $post_id, 'simple_attribution_title', esc_attr( $_POST['simple_attribution_title'] ) );
             }
     	    if( isset( $_POST['simple_attribution_url'] ) ) {
@@ -444,7 +444,7 @@ if( !class_exists( 'Simple_Attribution' ) ) {
 
                 $content .= $attribution;
             }
-            
+
             return $content;
         }
 
