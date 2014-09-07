@@ -1,5 +1,5 @@
 === Simple Attribution ===
-Contributors: Ghost1227
+Contributors: section214
 Donate link: http://pledgie.com/campaigns/17811
 Tags: attribution, citation, cite, post, link
 Requires at least: 3.0
