@@ -3,7 +3,7 @@
  * Plugin Name:     Simple Attribution
  * Plugin URI:      http://wordpress.org/plugins/simple-attribution/
  * Description:     Allows bloggers to easily add an attribution link to sourced blog posts.
- * Version:         1.1.1
+ * Version:         1.1.2
  * Author:          Daniel J Griffiths
  * Author URI:      http://section214.com
  * Text Domain:     simple-attribution
@@ -140,14 +140,10 @@ if( !class_exists( 'Simple_Attribution' ) ) {
         public function plugin_metalinks( $links, $file ) {
             if( $file == plugin_basename( __FILE__ ) ) {
                 $help_link = array(
-                    '<a href="http://section214.com/support/forum/simple-attribution/" target="_blank">' . __( 'Support Forum', 'simple-attribution' ) . '</a>'
+                    '<a href="http://support.section214.com/community/forum/support/free-plugins/simple-attribution/" target="_blank">' . __( 'Support Forum', 'simple-attribution' ) . '</a>'
                 );
 
-                $docs_link = array(
-                    '<a href="http://section214.com/docs/category/simple-attribution/" target="_blank">' . __( 'Docs', 'simple-attribution' ) . '</a>'
-                );
-
-                $links = array_merge( $links, $help_link, $docs_link );
+                $links = array_merge( $links, $help_link );
             }
 
             return $links;

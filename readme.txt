@@ -4,7 +4,7 @@ Donate link: http://pledgie.com/campaigns/17811
 Tags: attribution, citation, cite, post, link
 Requires at least: 3.0
 Tested up to: 3.3.2
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 A simple plugin to allow bloggers to add attribution to sourced posts.
 
@@ -32,6 +32,9 @@ None yet
 2. The options panel
 
 == Changelog ==
+
+= Version 1.1.2 =
+* Update support link
 
 = Version 1.1.1 =
 * Fix bug with WordPress installed in subdirectory not properly saving settings
